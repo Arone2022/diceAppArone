@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -23,20 +25,18 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  int DadoIzquierdo = Random().nextInt(6) + 1; // 0 - 5;
+  int DadoDerecho = Random().nextInt(6) + 1; // 0 - 5;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
-      appBar: AppBar(
-        title: Text("Dice Appp Arone"),
-        centerTitle: true,
         backgroundColor: Colors.deepPurple,
-      ),
-      body: Center(
-        child: Row(
-          children: [Text("aca ira las iamgenes")],
+        appBar: AppBar(
+          title: const Text("DiceApp"),
+          centerTitle: true,
+          backgroundColor: Colors.deepPurple,
+          elevation: 10.0,
         ),
-      ),
-    );
+        body: Center());
   }
 }
