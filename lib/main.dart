@@ -53,6 +53,19 @@ class _HomeState extends State<Home> {
               ),
               flex: 1,
             ),
+            Expanded(
+              child: TextButton(
+                onPressed: () {
+                  DadoIzquierdo = Random().nextInt(6) + 1; // 0 - 5
+                  DadoDerecho = Random().nextInt(6) + 1; // 0 - 5;
+                  setState(() {});
+                },
+                child: Image.asset(
+                  "imagenes/dice$DadoDerecho.png",
+                ),
+              ),
+              flex: 1,
+            ),
           ],
         ),
       ),
