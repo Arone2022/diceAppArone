@@ -30,13 +30,32 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.deepPurple,
+      appBar: AppBar(
+        title: const Text("DiceApp"),
+        centerTitle: true,
         backgroundColor: Colors.deepPurple,
-        appBar: AppBar(
-          title: const Text("DiceApp"),
-          centerTitle: true,
-          backgroundColor: Colors.deepPurple,
-          elevation: 10.0,
+        elevation: 10.0,
+      ),
+      body: Center(
+        child: Row(
+          children: [
+            Expanded(
+              child: TextButton(
+                onPressed: () {
+                  DadoIzquierdo = Random().nextInt(6) + 1; // 0 - 5
+                  DadoDerecho = Random().nextInt(6) + 1; // 0 - 5;
+                  setState(() {});
+                },
+                child: Image.asset(
+                  "imagenes/dice$DadoIzquierdo.png",
+                ),
+              ),
+              flex: 1,
+            ),
+          ],
         ),
-        body: Center());
+      ),
+    );
   }
 }
